@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>POELiveSplitComponent</RootNamespace>
     <AssemblyName>POELiveSplitComponent</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -37,6 +37,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -79,6 +82,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Fakes Include="Fakes\LiveSplit.Core.fakes" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,16 +98,6 @@
     <Folder Include="Update\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LiveSplit\LiveSplit\LiveSplit.Core\LiveSplit.Core.csproj">
-      <Project>{6de847db-20a3-4848-aeee-1b4364aecdfb}</Project>
-      <Name>LiveSplit.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LiveSplit\LiveSplit\UpdateManager\UpdateManager.csproj">
-      <Project>{56dea3a0-2eb7-493b-b50f-a5e3aa8ae52a}</Project>
-      <Name>UpdateManager</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\TownIcon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +105,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\NoWpIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LiveSplit\LiveSplit\LiveSplit.Core\LiveSplit.Core.csproj">
+      <Project>{6de847db-20a3-4848-aeee-1b4364aecdfb}</Project>
+      <Name>LiveSplit.Core</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
+    <ProjectReference Include="..\LiveSplit\LiveSplit\UpdateManager\UpdateManager.csproj">
+      <Project>{56dea3a0-2eb7-493b-b50f-a5e3aa8ae52a}</Project>
+      <Name>UpdateManager</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
